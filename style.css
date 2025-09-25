@@ -1,0 +1,361 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #e0e0e0;
+  background: #0a0a0a;
+  background-image: 
+    linear-gradient(45deg, rgba(0,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,0,255,0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,0,255,0.05) 75%);
+  background-size: 40px 40px;
+  background-color: #0a0a0a;
+  line-height: 1.6;
+}
+
+/* Navbar */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  background: rgba(15, 15, 30, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid rgba(0,255,255,0.2);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0ff;
+}
+
+.glow {
+  color: #f0f;
+  text-shadow: 0 0 5px #f0f, 0 0 10px #f0f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+}
+
+#hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(0,255,255,0.06) 0px,
+    rgba(0,255,255,0.06) 2px,
+    transparent 2px,
+    transparent 80px
+  );
+  animation: softMove 20s linear infinite;
+}
+
+@keyframes softMove {
+  from { background-position: 0 0; }
+  to { background-position: 200px 200px; }
+}
+
+
+#hero h1 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 0 8px #0ff, 0 0 15px #0ff;
+}
+
+#hero .neon {
+  color: #0ff;
+  text-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
+}
+
+#hero p {
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #aaa;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: #0ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00f7ff;
+  box-shadow: 0 0 12px #0ff, 0 0 25px #0ff;
+}
+
+/* Section */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #0ff;
+  text-shadow: 0 0 6px #0ff;
+}
+
+/* About */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 3px solid #0ff;
+  box-shadow: 0 0 15px #0ff, 0 0 35px #0ff;
+  object-fit: cover;
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: left;
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+/* Projects */
+.project-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background: #111;
+  border: 1px solid rgba(0,255,255,0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  overflow: hidden;
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 15px 0;
+  color: #0ff;
+}
+
+.project-card p {
+  padding: 0 15px 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Contact */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin: 0 15px;
+  font-size: 30px;
+  color: #0ff;
+  transition: 0.3s;
+  text-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
+}
+
+.social-icons a:hover {
+  color: #f0f;
+  text-shadow: 0 0 10px #f0f, 0 0 20px #f0f;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0a0a0a;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Animasi masuk saat scroll */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animasi masuk saat scroll */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tambah jarak antar section */
+section {
+  padding: 100px 20px; 
+  min-height: 100vh;   
+  box-sizing: border-box;
+  position: relative;  
+}
+
+#about {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+}
+
+/* ABOUT */
+#about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(0,255,255,0.06) 0px,
+    rgba(0,255,255,0.06) 2px,
+    transparent 2px,
+    transparent 80px
+  );
+  animation: softMove 20s linear infinite;
+  pointer-events: none;
+}
+
+/* PROJECTS */
+#projects {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+}
+#projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(0,255,255,0.06) 0px,
+    rgba(0,255,255,0.06) 2px,
+    transparent 2px,
+    transparent 80px
+  );
+  animation: softMove 20s linear infinite;
+  pointer-events: none;
+}
+
+/* CONTACT */
+#contact {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+}
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(0,255,255,0.06) 0px,
+    rgba(0,255,255,0.06) 2px,
+    transparent 2px,
+    transparent 80px
+  );
+  animation: softMove 20s linear infinite;
+  pointer-events: none;
+}
+
+/* Animasi sama dengan hero */
+@keyframes softMove {
+  from { background-position: 0 0; }
+  to { background-position: 200px 200px; }
+}
+
